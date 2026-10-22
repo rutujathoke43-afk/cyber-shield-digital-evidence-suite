@@ -1,0 +1,9 @@
+{% extends 'base.html' %}{% block title %}New Case - CyberShield{% endblock %}{% block content %}
+<div class="form-hero"><div><p class="eyebrow">CASE INTAKE</p><h1>Create New Case</h1><p>Register a new digital crime investigation with structured details and priority.</p></div><div class="form-hero-icon">＋</div></div>
+<div class="form-layout"><section class="form-card enhanced"><div class="form-section-title"><span>01</span><div><b>Investigation Details</b><small>Basic identification and classification</small></div></div><form method="post"><label>Case Title <em>*</em></label><input name="title" required placeholder="Example: Phishing Investigation">
+<label>Category <em>*</em></label><select name="category" required><option value="">Select category</option><option>Phishing</option><option>Online Fraud</option><option>Cyber Harassment</option><option>Data Theft</option><option>Account Compromise</option><option>Other</option></select>
+<label>Priority</label><select name="priority"><option>Low</option><option selected>Medium</option><option>High</option><option>Critical</option></select>
+<label>Description</label><textarea name="description" rows="7" placeholder="Describe the incident, suspected activity and investigation focus..."></textarea>
+<div class="actions"><a class="button secondary" href="{{url_for('cases')}}">Cancel</a><button class="button">Create Case & Continue →</button></div></form></section>
+<aside class="intake-card"><div class="shield-mini">◈</div><h3>Secure Case Intake</h3><p>Your case record is stored in the local SQLite database and can later be linked with digital evidence.</p><div class="intake-line"><span>✓</span> Structured case number</div><div class="intake-line"><span>✓</span> Priority classification</div><div class="intake-line"><span>✓</span> Audit activity recorded</div><div class="intake-line"><span>✓</span> Evidence-ready workflow</div></aside></div>
+{% endblock %}

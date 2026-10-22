@@ -1,0 +1,4 @@
+{% extends 'base.html' %}{% block title %}Activity Log - CyberShield{% endblock %}{% block content %}
+<div class="page-head hero-head"><div><p class="eyebrow">AUDIT & MONITORING</p><h1>Activity Log</h1><p class="muted">A chronological record of important actions performed inside CyberShield.</p></div><div class="audit-badge">● LIVE AUDIT TRAIL</div></div>
+<div class="timeline-panel">{% if rows %}{% for r in rows %}<div class="timeline-item"><div class="timeline-dot">✓</div><div class="timeline-content"><div class="timeline-top"><b>{{r.action}}</b><span>{{r.created_at}}</span></div><p>{{r.details or 'System event recorded.'}}</p></div></div>{% endfor %}{% else %}<div class="empty"><div class="empty-icon">◷</div><h3>No activity recorded</h3><p>System actions will appear here.</p></div>{% endif %}</div>
+{% endblock %}
